@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant Feed</title>
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      background: #000;
+      color: white;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      margin-right: 20%;
+      padding: 20px 3px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 10;
+    }
+
+    header .logo {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .feed {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+    }
+
+    .post {
+      position: relative;
+      height: 103vh;
+      scroll-snap-align: start;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+      padding-bottom: 100px; /* Prevents overlap */
+      box-sizing: border-box;
+    }
+
+    .post video, .post img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .post-info {
+      position: relative;
+      z-index: 2;
+    }
+
+    .restaurant-name {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .menu-btn {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 10px 18px;
+      font-size: 1rem;
+      display: inline-block;
+      background: #ff6600;
+      color: white;
+      border: none;
+      border-radius: 20px;
+    }
+
+    .menu-btn i {
+      margin-right: 6px;
+    }
+
+    .actions {
+      position: absolute;
+      right: 20px;
+      bottom: 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 2;
+    }
+
+    .actions button {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .actions button i {
+      font-size: 1.2rem;
+    }
+
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #111;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #222;
+      z-index: 10;
+    }
+
+    .bottom-bar button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    .bottom-bar button i {
+      font-size: 1.2rem;
+    }
+
+    header button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+    }
+
+    header button i {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><i class="fa-solid fa-utensils"></i> WTE</div>
+    <div>
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+  </header>
+
+  <main class="feed">
+    <section class="post">
+      <img src="img/home feed.jpg" alt="Restaurant">
+      <div class="post-info">
+        <div class="restaurant-name">OFADA NATION</div>
+        <p>Caption</p>
+        <a href="menu.html" class="menu-btn"><i class="fa-solid fa-utensils"></i> View Menu</a>
+      </div>
+      <div class="actions">
+        <button><i class="fa-solid fa-heart"></i></button>
+        <button><i class="fa-solid fa-comment"></i></button>
+        <button><i class="fa-solid fa-bookmark"></i></button>
+        <button><i class="fa-solid fa-location-dot"></i></button>
+      </div>
+    </section>
+
+    <section class="post">
+      <img src="https://source.unsplash.com/800x1200/?sushi,restaurant" alt="Restaurant">
+      <div class="post-info">
+        <div class="restaurant-name">Sushi Central</div>
+        <button class="menu-btn"><i class="fa-solid fa-utensils"></i> View Menu</button>
+      </div>
+      <div class="actions">
+        <button><i class="fa-solid fa-heart"></i></button>
+        <button><i class="fa-solid fa-comment"></i></button>
+        <button><i class="fa-solid fa-bookmark"></i></button>
+        <button><i class="fa-solid fa-location-dot"></i></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bottom-bar">
+    <button><i class="fa-solid fa-house"></i></button>
+    <button><i class="fa-solid fa-map"></i></button>
+    <button><i class="fa-solid fa-plus"></i></button>
+    <button><i class="fa-solid fa-user"></i></button>
+  </footer>
+
+</body>
+</html>
