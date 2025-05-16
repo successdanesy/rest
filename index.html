@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>Restaurant Feed</title>
-  
+
   <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -15,14 +15,14 @@
       overflow-x: hidden;
       background: #000;
       color: white;
+      padding-bottom: calc(80px + env(safe-area-inset-bottom, 20px)); /* Make room for bottom bar */
     }
 
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      margin-right: 20%;
-      padding: 20px 3px;
+      padding: 15px 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -50,7 +50,7 @@
       flex-direction: column;
       justify-content: flex-end;
       padding: 20px;
-      padding-bottom: 100px; /* Prevents overlap */
+      padding-bottom: 160px; /* Prevent overlap with footer and buttons */
       box-sizing: border-box;
     }
 
@@ -82,9 +82,10 @@
       font-size: 1rem;
       display: inline-block;
       background: #ff6600;
-      color: white;
+      color: #ffffff;
       border: none;
       border-radius: 20px;
+      text-decoration: none;
     }
 
     .menu-btn i {
@@ -94,7 +95,7 @@
     .actions {
       position: absolute;
       right: 20px;
-      bottom: 100px;
+      bottom: 120px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -104,7 +105,7 @@
     .actions button {
       background: rgba(255, 255, 255, 0.2);
       border: none;
-      color: white;
+      color: #ffffff;
       padding: 10px;
       border-radius: 50%;
       cursor: pointer;
@@ -122,9 +123,9 @@
       background: #111;
       display: flex;
       justify-content: space-around;
-      padding: 10px 0;
+      padding: 10px env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 0);
       border-top: 1px solid #222;
-      z-index: 10;
+      z-index: 1000;
     }
 
     .bottom-bar button {
@@ -163,8 +164,7 @@
     <section class="post">
       <img src="img/home feed.jpg" alt="Restaurant">
       <div class="post-info">
-        <div class="restaurant-name">OFADA NATION</div>
-        <p>Caption</p>
+        <div class="restaurant-name">Pasta House</div>
         <a href="menu.html" class="menu-btn"><i class="fa-solid fa-utensils"></i> View Menu</a>
       </div>
       <div class="actions">
@@ -176,10 +176,10 @@
     </section>
 
     <section class="post">
-      <img src="https://source.unsplash.com/800x1200/?sushi,restaurant" alt="Restaurant">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Restaurant">
       <div class="post-info">
         <div class="restaurant-name">Sushi Central</div>
-        <button class="menu-btn"><i class="fa-solid fa-utensils"></i> View Menu</button>
+        <a href="menu.html" class="menu-btn"><i class="fa-solid fa-utensils"></i> View Menu</a>
       </div>
       <div class="actions">
         <button><i class="fa-solid fa-heart"></i></button>
